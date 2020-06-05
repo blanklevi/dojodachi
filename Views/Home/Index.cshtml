@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dojodachi</h1>
+    <h2>Fullness: @ViewBag.Fullness &#124; Happiness: @ViewBag.Happiness &#124; Meals: @ViewBag.Meals &#124; Energy: @ViewBag.Energy</h2>
+    <div>
+        <img src="~/images/draik.png" alt="neopet">
+        <h3>@ViewBag.Status</h3>
+    </div>
+    <div>
+        <a href="/feed" class="btn btn-dark" role="button">Feed</a>
+        <a href="/play" class="btn btn-dark" role="button">Play</a>
+        <a href="/work" class="btn btn-dark" role="button">Work</a>
+        <a href="/sleep" class="btn btn-dark" role="button">Sleep</a>
+    </div>
+    @{
+        if (ViewBag.Status == "Congratulations! You Won!")
+        {
+            <a href="/restart" class="btn btn-dark" role="button">Restart?</a>
+        }
+    }
+</div>
